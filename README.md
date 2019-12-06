@@ -39,4 +39,3 @@ I have used Django REST Framework to build this API.
 ![](./md-images/SS3.png)
 * **api/products/1/prices/**
 ![](./md-images/SS4.png)
-
