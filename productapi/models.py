@@ -2,6 +2,9 @@ from django.db import models
 
 
 class Product(models.Model):
+    """
+    A product item.
+    """
     name = models.CharField(max_length=250)
     code = models.CharField(max_length=10)
     slug = models.SlugField(max_length=250)
@@ -12,6 +15,9 @@ class Product(models.Model):
 
 
 class Attribute(models.Model):
+    """
+    Attributes of the product
+    """
     product = models.ForeignKey(Product, related_name="attributes", on_delete=models.PROTECT)
     color = models.CharField(max_length=15)
     size = models.CharField(max_length=5)
@@ -21,6 +27,9 @@ class Attribute(models.Model):
 
 
 class Price(models.Model):
+    """
+    Price of the product with different date range
+    """
     product = models.ForeignKey(Product, related_name="prices", on_delete=models.PROTECT)
     price = models.IntegerField()
     start_date = models.DateField(null=True)
