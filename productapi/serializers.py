@@ -7,6 +7,7 @@ class ProductSerializer(serializers.ModelSerializer):
     """
     Product serializer
     """
+
     class Meta:
         model = Product
         fields = '__all__'
@@ -16,6 +17,7 @@ class AttributeSerializer(serializers.HyperlinkedModelSerializer):
     """
     Attribute serializer to show the product attributes list.
     """
+
     def __init__(self, *args, **kwargs):
         """
         For multiple attributes used many=True
@@ -35,6 +37,7 @@ class PriceSerializer(serializers.HyperlinkedModelSerializer):
     """
     Price serializer to show the prices over the API call.
     """
+
     def __init__(self, *args, **kwargs):
         """
         For multiple attributes used many=True
